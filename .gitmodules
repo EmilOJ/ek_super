@@ -1,0 +1,6 @@
+[submodule "ek_test1"]
+	path = ek_test1
+	url = git@github.com:EmilOJ/ek_test1.git
+[submodule "ek_test2"]
+	path = ek_test2
+	url = git@github.com:EmilOJ/ek_test2.git
