@@ -1,21 +1,32 @@
-.PHONY: gcod
-gcod:
+# 全サブリポをmainに切り替える
+.PHONY: subs_main
+checkout_develop:
 	git submodule foreach 'git checkout develop'
 
-.PHONY: gcom
-gcom:
+# 全サブリポをdevelopに切り替える
+.PHONY: subs_develop
+checkout_main:
 	git submodule foreach 'git checkout main'
 
-.PHONY: gcov
-gcov:
+# 全サブリポのgit statusを見る
+.PHONY: subs_status
+subs_status:
+	git submodule foreach 'git status'
+
+
+.PHONY: all_checkout_release
+checkout_release: checkout_tag_super update_tags
+
+# 全サブリポをversions.txtに指定されてるリリースに切り替える
+.PHONY: subs_update_tag
+subs_update_tag:
 	while read -r repo version; do \
 	  cd $$repo;                   \
 	  git checkout $$version;      \
 	  cd ..;                       \
-	done <versions.txt             
+	done <versions.txt
 
-.PHONY: gst
-gst:
-	git submodule foreach 'git status'
-
+.PHONY: super_tag
+super_tag:
+	git checkout $$VERSION
 

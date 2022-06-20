@@ -1,2 +1,3 @@
 ek_test1 1.2.0
 ek_test2 1.0.0
+ek_control v1.0.0

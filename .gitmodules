@@ -4,3 +4,6 @@
 [submodule "ek_test2"]
 	path = ek_test2
 	url = git@github.com:EmilOJ/ek_test2.git
+[submodule "ek_control"]
+	path = ek_control
+	url = git@github.com:EightKnot-SW/ek_control.git
