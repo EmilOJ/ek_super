@@ -9,10 +9,10 @@ gcom:
 .PHONY: gcov
 gcov:
 	while read -r repo version; do \
-	  cd $$repo                    \
-	  git checkout $$version       \
-	  cd ..                        \
-	done <versions.txt             \
+	  cd $$repo;                   \
+	  git checkout $$version;      \
+	  cd ..;                       \
+	done <versions.txt             
 
 .PHONY: gst
 gst:
